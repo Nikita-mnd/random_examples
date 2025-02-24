@@ -1,11 +1,11 @@
 #include "main.h"
 #include "util.h" 
 
-int time(int play) {
-	int time;
-
-	return time;
-}
+//int time(int play) {
+//	int time;
+//
+//	return time;
+//}
 
 
 
@@ -39,9 +39,10 @@ string creat_random_exampels(int number_of_examples,int* answear) {
 		int c = random_number() * sign1;
 		int b = random_number() * sign2;
 	}
-
-	examples = to_string(a) + " " + to_string(b)+
-		" "+ to_string(c) + "=";
+	string s1 = sign1 == 1 ? " " : "+";
+	string s2 = sign2 == 1 ? " " : "+";
+	examples = to_string(a) +" " +s1+" " + to_string(b) +
+		s2+ to_string(c) + " = ";
 	int ans = a + b + c;
 	answear[number_of_examples] = ans;
 

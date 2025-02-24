@@ -2,7 +2,7 @@
 
 int random_number() {
 
-	int number = rand() % 10 + 1;
+	int number = rand() % 15 + 1;
 	return number;
 }
 
