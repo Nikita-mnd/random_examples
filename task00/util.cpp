@@ -16,3 +16,7 @@ int random_sign() {
 	}
 	return sign;
 }
+
+//int answear(int a, int b, int c) {
+//	return a + b + c;
+//}
