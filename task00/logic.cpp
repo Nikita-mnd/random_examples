@@ -24,7 +24,8 @@ string creat_random_exampels(int number_of_examples, int* answear) {
 	int a = random_number();
 	int c = random_number() * sign1;
 	int b = random_number() * sign2;
-	while (a + b + c > 20||a + b + c < 0||a+b<0 || a + b > 20) {
+	/*while (a + b + c > 12||a + b + c < 0||a+b<0 ||
+		a + b > 20||(a>10&&b>10)||(b > 10 && c > 10)||(a > 10 && c >10)) {
 
 		int sign1 = random_sign();
 		int sign2;
@@ -38,10 +39,8 @@ string creat_random_exampels(int number_of_examples, int* answear) {
 		int a = random_number();
 		int b = random_number() * sign1;
 		int c = random_number() * sign2;
-	}
-	cout << a << endl;
-	cout << b << endl;
-	cout << c << endl;
+	}*/
+	
 	string s1 = sign1 == 1 ? "" : "+";
 	string s2 = sign2 == 1 ? "" : "+";
 	examples = to_string(a)  + s1  + to_string(b) +
@@ -51,13 +50,14 @@ string creat_random_exampels(int number_of_examples, int* answear) {
 	return examples;
 }
 
-string checking_answear(int number_of_examples, int answear, int answera_of_users, string s) {
+string checking_answear(int number_of_examples, int answear, int answear_of_users) {
 	int num = number_of_examples;
-
-	if (answear != answera_of_users) {
-		s += "error in " + to_string(number_of_examples) 
+	string s = "";
+	if (answear != answear_of_users) {
+		s += "error in " + to_string(number_of_examples+1) 
 			+ " examples, correct answer " + to_string(answear) + "\n";
-	}
+		return s;
 
+	} 
 	return s;
 }
