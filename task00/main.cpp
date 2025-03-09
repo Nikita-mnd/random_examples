@@ -2,16 +2,19 @@
 #include "logic.h" 
 
 int main() {
+	cout << "See the number of examples you want to solve: ";
+	int examples;
+	cin >> examples;
 	clock_t start = clock();
 	
 	int* answear = new int(50);
 	int* answear_of_users = new int(50);
 	int number_of_examples;
-
+	
 	string result = "";
-	for (int i = 0; i <= 9;i++) {
+	for (int i = 0; i <= examples-1;i++) {
 
-	cout << creat_random_exampels(i, answear)<< endl;
+	cout << creat_random_exampels(i, answear) << endl;
 	
 	cin >> answear_of_users[i];
 
@@ -20,8 +23,11 @@ int main() {
 
 	clock_t end = clock();
 
-	double duration = (double)(end - start) / CLOCKS_PER_SEC ;
+	int duration = (double)(end - start) / CLOCKS_PER_SEC ;
 	cout << result << endl;
-	cout <<"you solved all the examples in " << duration <<" seconds" << endl;
+	if (result == "") {
+		cout << "Congratulations, you didn't make a single mistake." << endl;;
+	}
+	cout <<"You solved all the examples in " << duration <<" seconds" << endl;
 	return 0;
 }
